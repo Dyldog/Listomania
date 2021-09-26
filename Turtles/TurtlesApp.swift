@@ -11,7 +11,7 @@ import SwiftUI
 struct TurtlesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BlueprintList(blueprint: .mock)
         }
     }
 }

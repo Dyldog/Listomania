@@ -8,17 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48627002771006DD85F /* TurtlesApp.swift */; };
-		62C8F48927002771006DD85F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* ContentView.swift */; };
+		62C8F48927002771006DD85F /* BlueprintList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* BlueprintList.swift */; };
 		62C8F48B27002772006DD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48A27002772006DD85F /* Assets.xcassets */; };
 		62C8F48E27002772006DD85F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48D27002772006DD85F /* Preview Assets.xcassets */; };
+		62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49527002A0F006DD85F /* Blueprint.swift */; };
+		62C8F49827002A1C006DD85F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49727002A1C006DD85F /* Task.swift */; };
+		62C8F49A2700303D006DD85F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4992700303D006DD85F /* AlertView.swift */; };
+		62C8F49C27003223006DD85F /* ListList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49B27003223006DD85F /* ListList.swift */; };
+		62C8F49E270032BC006DD85F /* BlueprintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49D270032BC006DD85F /* BlueprintRow.swift */; };
+		62C8F4A0270032E5006DD85F /* BlueprintTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */; };
+		62C8F4A227003450006DD85F /* ManifestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4A127003450006DD85F /* ManifestRow.swift */; };
+		62C8F4A4270034D7006DD85F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4A3270034D7006DD85F /* Manifest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62C8F48327002770006DD85F /* Turtles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8F48627002771006DD85F /* TurtlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtlesApp.swift; sourceTree = "<group>"; };
-		62C8F48827002771006DD85F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
 		62C8F48A27002772006DD85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C8F48D27002772006DD85F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		62C8F49527002A0F006DD85F /* Blueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueprint.swift; sourceTree = "<group>"; };
+		62C8F49727002A1C006DD85F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		62C8F4992700303D006DD85F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		62C8F49B27003223006DD85F /* ListList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListList.swift; sourceTree = "<group>"; };
+		62C8F49D270032BC006DD85F /* BlueprintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintRow.swift; sourceTree = "<group>"; };
+		62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintTaskRow.swift; sourceTree = "<group>"; };
+		62C8F4A127003450006DD85F /* ManifestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestRow.swift; sourceTree = "<group>"; };
+		62C8F4A3270034D7006DD85F /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				62C8F48627002771006DD85F /* TurtlesApp.swift */,
-				62C8F48827002771006DD85F /* ContentView.swift */,
+				62C8F48827002771006DD85F /* BlueprintList.swift */,
+				62C8F49D270032BC006DD85F /* BlueprintRow.swift */,
+				62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */,
+				62C8F4A127003450006DD85F /* ManifestRow.swift */,
+				62C8F49B27003223006DD85F /* ListList.swift */,
+				62C8F4992700303D006DD85F /* AlertView.swift */,
+				62C8F494270029F9006DD85F /* Model */,
 				62C8F48A27002772006DD85F /* Assets.xcassets */,
 				62C8F48C27002772006DD85F /* Preview Content */,
 			);
@@ -65,6 +87,16 @@
 				62C8F48D27002772006DD85F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62C8F494270029F9006DD85F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62C8F49527002A0F006DD85F /* Blueprint.swift */,
+				62C8F49727002A1C006DD85F /* Task.swift */,
+				62C8F4A3270034D7006DD85F /* Manifest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C8F48927002771006DD85F /* ContentView.swift in Sources */,
+				62C8F49A2700303D006DD85F /* AlertView.swift in Sources */,
+				62C8F4A0270032E5006DD85F /* BlueprintTaskRow.swift in Sources */,
+				62C8F4A4270034D7006DD85F /* Manifest.swift in Sources */,
+				62C8F49827002A1C006DD85F /* Task.swift in Sources */,
+				62C8F4A227003450006DD85F /* ManifestRow.swift in Sources */,
+				62C8F48927002771006DD85F /* BlueprintList.swift in Sources */,
+				62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */,
+				62C8F49E270032BC006DD85F /* BlueprintRow.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
+				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +317,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +347,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
