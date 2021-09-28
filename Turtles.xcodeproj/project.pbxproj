@@ -12,7 +12,7 @@
 		62C8F48927002771006DD85F /* BlueprintList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* BlueprintList.swift */; };
 		62C8F48B27002772006DD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48A27002772006DD85F /* Assets.xcassets */; };
 		62C8F48E27002772006DD85F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48D27002772006DD85F /* Preview Assets.xcassets */; };
-		62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49527002A0F006DD85F /* Blueprint.swift */; };
+		62C8F49627002A0F006DD85F /* DeflatedBlueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49527002A0F006DD85F /* DeflatedBlueprint.swift */; };
 		62C8F49827002A1C006DD85F /* BlueprintTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49727002A1C006DD85F /* BlueprintTask.swift */; };
 		62C8F49A2700303D006DD85F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4992700303D006DD85F /* AlertView.swift */; };
 		62C8F49C27003223006DD85F /* ListList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49B27003223006DD85F /* ListList.swift */; };
@@ -28,6 +28,11 @@
 		62CCC66D2701F04A003D3E5B /* SimpleCheckbox in Frameworks */ = {isa = PBXBuildFile; productRef = 62CCC66C2701F04A003D3E5B /* SimpleCheckbox */; };
 		62CCC66F2701FB8C003D3E5B /* TextEntryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */; };
 		62E513CE27030FA100FDD3F7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513CD27030FA100FDD3F7 /* Database.swift */; };
+		62E513D527032DD100FDD3F7 /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513D427032DD100FDD3F7 /* Blueprint.swift */; };
+		62E513D727032E0900FDD3F7 /* BlueprintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513D627032E0900FDD3F7 /* BlueprintItem.swift */; };
+		62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513D82703387500FDD3F7 /* SearchBar.swift */; };
+		62E513DB270338EE00FDD3F7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DA270338EE00FDD3F7 /* SearchView.swift */; };
+		62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,7 @@
 		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
 		62C8F48A27002772006DD85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C8F48D27002772006DD85F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		62C8F49527002A0F006DD85F /* Blueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueprint.swift; sourceTree = "<group>"; };
+		62C8F49527002A0F006DD85F /* DeflatedBlueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeflatedBlueprint.swift; sourceTree = "<group>"; };
 		62C8F49727002A1C006DD85F /* BlueprintTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintTask.swift; sourceTree = "<group>"; };
 		62C8F4992700303D006DD85F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		62C8F49B27003223006DD85F /* ListList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListList.swift; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestTaskRow.swift; sourceTree = "<group>"; };
 		62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryModal.swift; sourceTree = "<group>"; };
 		62E513CD27030FA100FDD3F7 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		62E513D427032DD100FDD3F7 /* Blueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueprint.swift; sourceTree = "<group>"; };
+		62E513D627032E0900FDD3F7 /* BlueprintItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintItem.swift; sourceTree = "<group>"; };
+		62E513D82703387500FDD3F7 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		62E513DA270338EE00FDD3F7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintSearchItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +114,14 @@
 		62C8F494270029F9006DD85F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				62C8F49527002A0F006DD85F /* Blueprint.swift */,
+				62C8F49527002A0F006DD85F /* DeflatedBlueprint.swift */,
 				62CCC65A2701C865003D3E5B /* Mocks.swift */,
 				62C8F49727002A1C006DD85F /* BlueprintTask.swift */,
 				62C8F4A3270034D7006DD85F /* Manifest.swift */,
 				62CCC6652701EEB6003D3E5B /* ManifestTask.swift */,
 				62E513CD27030FA100FDD3F7 /* Database.swift */,
+				62E513D427032DD100FDD3F7 /* Blueprint.swift */,
+				62E513D627032E0900FDD3F7 /* BlueprintItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +132,7 @@
 				62C8F48827002771006DD85F /* BlueprintList.swift */,
 				62C8F49D270032BC006DD85F /* BlueprintView.swift */,
 				62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */,
+				62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */,
 			);
 			path = Blueprints;
 			sourceTree = "<group>";
@@ -149,6 +162,8 @@
 				62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */,
 				62C8F4992700303D006DD85F /* AlertView.swift */,
 				622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */,
+				62E513D82703387500FDD3F7 /* SearchBar.swift */,
+				62E513DA270338EE00FDD3F7 /* SearchView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -252,11 +267,16 @@
 				62CCC66A2701EFAA003D3E5B /* ManifestTaskRow.swift in Sources */,
 				62C8F49827002A1C006DD85F /* BlueprintTask.swift in Sources */,
 				62C8F4A227003450006DD85F /* ManifestRow.swift in Sources */,
+				62E513DB270338EE00FDD3F7 /* SearchView.swift in Sources */,
 				62C8F48927002771006DD85F /* BlueprintList.swift in Sources */,
-				62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */,
+				62C8F49627002A0F006DD85F /* DeflatedBlueprint.swift in Sources */,
 				622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */,
 				62E513CE27030FA100FDD3F7 /* Database.swift in Sources */,
+				62E513D527032DD100FDD3F7 /* Blueprint.swift in Sources */,
 				62C8F49E270032BC006DD85F /* BlueprintView.swift in Sources */,
+				62E513D727032E0900FDD3F7 /* BlueprintItem.swift in Sources */,
+				62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */,
+				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
 			);

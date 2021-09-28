@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ManifestTask: Identifiable {
+struct ManifestTask: Identifiable, Codable {
     let id: UUID
     let title: String
     var completedDate: Date?

@@ -12,11 +12,15 @@ struct ManifestList: View {
     let database: Database
     
     var body: some View {
-        List(manifest.tasks) { task in
-            ManifestTaskRow(task: task, onCompletionChange: { self.onTaskChange(taskID: task.id, newStatus: $0) })
-                .buttonStyle(PlainButtonStyle())
+        List {
+            ForEach(manifest.tasks) { task in
+                ManifestTaskRow(task: task, onCompletionChange: { self.onTaskChange(taskID: task.id, newStatus: $0) })
+                    .buttonStyle(PlainButtonStyle())
+            }
+            .onMove(perform: { database.moveTask(atIndexes: $0, toIndex: $1, inManifestWithID: manifest.id) })
         }
         .navigationTitle(manifest.title)
+//        .toolbar { EditButton() }
     }
     
     func onTaskChange(taskID: UUID, newStatus: Bool) {

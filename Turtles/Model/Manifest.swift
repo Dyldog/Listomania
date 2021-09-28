@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Manifest: Identifiable {
+struct Manifest: Identifiable, Codable {
     let id: UUID
     let title: String
     var tasks: [ManifestTask]
     var incompleteTasks: [ManifestTask] { tasks.filter { $0.completed == false }}
     var completedTasks: [ManifestTask] { tasks.filter { $0.completed == true }}
+    
+    var completed: Bool {
+        return self.tasks.count != self.completedTasks.count
+    }
 }
 
 extension Manifest {

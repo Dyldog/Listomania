@@ -10,6 +10,10 @@ import SwiftUI
 struct ListList: View {
     @ObservedObject var database: Database
     
+    var manifests: [Manifest] {
+        database.manifests.filter { $0.completed }
+    }
+    
     @State private var state: ScreenState = .normal
     
     private var showingAddBlueprintAlert: Binding<Bool> { Binding(
@@ -21,7 +25,7 @@ struct ListList: View {
     var body: some View {
         List {
             Section(header: Text("Manifests")) {
-                ForEach(database.manifests) { manifest in
+                ForEach(manifests) { manifest in
                     NavigationLink {
                         ManifestList(manifest: manifest, database: database)
                     } label: {
@@ -29,6 +33,7 @@ struct ListList: View {
                     }
 
                 }
+                .onMove(perform: { database.moveManifest(atIndexes: $0, toIndex: $1) })
             }
             
             Section(header: Text("Blueprints")) {
@@ -40,7 +45,7 @@ struct ListList: View {
                     }
                     .swipeActions() {
                         Button {
-                            database.makeManifest(from: blueprint)
+                            database.makeManifest(fromBlueprintWithID: blueprint.id)
                         } label: {
                             Label("Make Manifest", systemImage: "wand.and.stars")
                         }
@@ -48,6 +53,7 @@ struct ListList: View {
 
                     }
                 }
+                .onMove(perform: { database.moveBlueprint(atIndexes: $0, toIndex: $1) })
                 
                 Button {
                     showingAddBlueprintAlert.wrappedValue = true
@@ -64,6 +70,7 @@ struct ListList: View {
                 }
             }
         ))
+//        .toolbar { EditButton() }
     }
     
     func didAddBlueprint(withTitle title: String) {
@@ -82,7 +89,7 @@ extension ListList {
             }
         }
         
-        case makeManifest(Blueprint)
+        case makeManifest(DeflatedBlueprint)
         case newBlueprint
     }
 }

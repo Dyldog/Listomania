@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BlueprintTask: Identifiable {
+struct BlueprintTask: Identifiable, Codable {
     let id: UUID
     let title: String
     

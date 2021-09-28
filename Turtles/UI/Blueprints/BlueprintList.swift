@@ -31,22 +31,30 @@ struct BlueprintList: View {
         set: { state = ($0 ? .showingAddBlueprintAlert : .normal) }
     ) }
     
+    private var showingAddExistingBlueprintSheet: Binding<Bool> { Binding(
+        get: { return state == .showingAddExistingBlueprintSheet },
+        set: { state = ($0 ? .showingAddExistingBlueprintSheet : .normal) }
+    ) }
+    
     var body: some View {
-        List(blueprint.items) { item in
-            self.view(for: item)
-                .swipeActions {
-                    Button {
-                        database.deleteItem(item, from: blueprintID)
-                    } label: {
-                        Label("Delete", systemImage: "trash")
+        List{
+            ForEach(blueprint.items) { item in
+                self.view(for: item)
+                    .swipeActions {
+                        Button {
+                            database.deleteItem(item, from: blueprintID)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        .tint(.red)
                     }
-                    .tint(.red)
-                }
+            }
+            .onMove(perform: { database.moveItem(atIndexes: $0, toIndex: $1, inBlueprintWithID: blueprintID) })
         }
         .navigationTitle(blueprint.title)
         .confirmationDialog("Add", isPresented: showingAddSheet, actions: {
             Button("Task", action: { showingAddTaskAlert.wrappedValue = true })
-            Button("Blueprint", action: { showingAddBlueprintAlert.wrappedValue = true })
+            Button("Blueprint", action: { showingAddExistingBlueprintSheet.wrappedValue = true })
         })
         .alert(isPresented: showingAddTaskAlert, TextAlert(
             title: "Add Task", message: nil, action: { text in
@@ -55,6 +63,20 @@ struct BlueprintList: View {
                 }
             }
         ))
+        .sheet(isPresented: showingAddExistingBlueprintSheet, content: {
+            SearchView(
+                title: "Add Blueprint",
+                items: searchItems()) { selected, searchText in
+                    switch selected {
+                    case .add(let blueprint):
+                        database.addBlueprint(blueprint.id, to: blueprintID)
+                    case .create:
+                        self.didAddBlueprint(withTitle: searchText)
+                    }
+                    
+                    state = .normal
+                }
+        })
         .alert(isPresented: showingAddBlueprintAlert, TextAlert(
             title: "Add Blueprint", message: nil, action: { text in
                 if let text = text, !text.isEmpty {
@@ -83,6 +105,10 @@ struct BlueprintList: View {
         }
     }
     
+    func searchItems() -> [BlueprintSearchItem] {
+        database.blueprints.filter { $0.id != blueprintID }.map { BlueprintSearchItem.add($0) }
+    }
+    
     func didAddTask(withTitle title: String) {
         database.addTask(BlueprintTask(id: .init(), title: title), to: blueprintID)
     }
@@ -95,7 +121,7 @@ struct BlueprintList: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        BlueprintList(blueprintID: Blueprint.mock.id, database: Database())
+        BlueprintList(blueprintID: DeflatedBlueprint.mock.first!.id, database: Database())
     }
 }
 
@@ -105,5 +131,6 @@ extension BlueprintList {
         case showingActionSheet
         case showingAddTaskAlert
         case showingAddBlueprintAlert
+        case showingAddExistingBlueprintSheet
     }
 }
