@@ -61,6 +61,7 @@
 		62E513D82703387500FDD3F7 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		62E513DA270338EE00FDD3F7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintSearchItem.swift; sourceTree = "<group>"; };
+		62E513DE2703498600FDD3F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		62C8F47A27002770006DD85F = {
 			isa = PBXGroup;
 			children = (
+				62E513DE2703498600FDD3F7 /* README.md */,
 				62C8F48527002771006DD85F /* Turtles */,
 				62C8F48427002770006DD85F /* Products */,
 			);
