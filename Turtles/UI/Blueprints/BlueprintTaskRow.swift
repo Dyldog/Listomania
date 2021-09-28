@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BlueprintTaskRow: View {
-    let task: Task
+    let task: BlueprintTask
     var body: some View {
         Text(task.title)
     }

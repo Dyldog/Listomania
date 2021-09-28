@@ -11,6 +11,11 @@ struct ManifestRow: View {
     let manifest: Manifest
     
     var body: some View {
-        Text(manifest.title)
+        HStack {
+            Text(manifest.title)
+            Spacer()
+            Text("\(manifest.completedTasks.count)/\(manifest.tasks.count)")
+                .font(.headline)
+        }
     }
 }

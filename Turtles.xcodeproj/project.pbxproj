@@ -7,34 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */; };
 		62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48627002771006DD85F /* TurtlesApp.swift */; };
 		62C8F48927002771006DD85F /* BlueprintList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* BlueprintList.swift */; };
 		62C8F48B27002772006DD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48A27002772006DD85F /* Assets.xcassets */; };
 		62C8F48E27002772006DD85F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48D27002772006DD85F /* Preview Assets.xcassets */; };
 		62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49527002A0F006DD85F /* Blueprint.swift */; };
-		62C8F49827002A1C006DD85F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49727002A1C006DD85F /* Task.swift */; };
+		62C8F49827002A1C006DD85F /* BlueprintTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49727002A1C006DD85F /* BlueprintTask.swift */; };
 		62C8F49A2700303D006DD85F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4992700303D006DD85F /* AlertView.swift */; };
 		62C8F49C27003223006DD85F /* ListList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49B27003223006DD85F /* ListList.swift */; };
-		62C8F49E270032BC006DD85F /* BlueprintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49D270032BC006DD85F /* BlueprintRow.swift */; };
+		62C8F49E270032BC006DD85F /* BlueprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49D270032BC006DD85F /* BlueprintView.swift */; };
 		62C8F4A0270032E5006DD85F /* BlueprintTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */; };
 		62C8F4A227003450006DD85F /* ManifestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4A127003450006DD85F /* ManifestRow.swift */; };
 		62C8F4A4270034D7006DD85F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F4A3270034D7006DD85F /* Manifest.swift */; };
+		62CCC65B2701C865003D3E5B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC65A2701C865003D3E5B /* Mocks.swift */; };
+		62CCC6642701D69D003D3E5B /* ComposableNavigator in Frameworks */ = {isa = PBXBuildFile; productRef = 62CCC6632701D69D003D3E5B /* ComposableNavigator */; };
+		62CCC6662701EEB6003D3E5B /* ManifestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC6652701EEB6003D3E5B /* ManifestTask.swift */; };
+		62CCC6682701EF4E003D3E5B /* ManifestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC6672701EF4E003D3E5B /* ManifestList.swift */; };
+		62CCC66A2701EFAA003D3E5B /* ManifestTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */; };
+		62CCC66D2701F04A003D3E5B /* SimpleCheckbox in Frameworks */ = {isa = PBXBuildFile; productRef = 62CCC66C2701F04A003D3E5B /* SimpleCheckbox */; };
+		62CCC66F2701FB8C003D3E5B /* TextEntryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */; };
+		62E513CE27030FA100FDD3F7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513CD27030FA100FDD3F7 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+Identifiable.swift"; sourceTree = "<group>"; };
 		62C8F48327002770006DD85F /* Turtles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8F48627002771006DD85F /* TurtlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtlesApp.swift; sourceTree = "<group>"; };
 		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
 		62C8F48A27002772006DD85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C8F48D27002772006DD85F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62C8F49527002A0F006DD85F /* Blueprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueprint.swift; sourceTree = "<group>"; };
-		62C8F49727002A1C006DD85F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		62C8F49727002A1C006DD85F /* BlueprintTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintTask.swift; sourceTree = "<group>"; };
 		62C8F4992700303D006DD85F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		62C8F49B27003223006DD85F /* ListList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListList.swift; sourceTree = "<group>"; };
-		62C8F49D270032BC006DD85F /* BlueprintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintRow.swift; sourceTree = "<group>"; };
+		62C8F49D270032BC006DD85F /* BlueprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintView.swift; sourceTree = "<group>"; };
 		62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintTaskRow.swift; sourceTree = "<group>"; };
 		62C8F4A127003450006DD85F /* ManifestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestRow.swift; sourceTree = "<group>"; };
 		62C8F4A3270034D7006DD85F /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
+		62CCC65A2701C865003D3E5B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		62CCC6652701EEB6003D3E5B /* ManifestTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestTask.swift; sourceTree = "<group>"; };
+		62CCC6672701EF4E003D3E5B /* ManifestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestList.swift; sourceTree = "<group>"; };
+		62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestTaskRow.swift; sourceTree = "<group>"; };
+		62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryModal.swift; sourceTree = "<group>"; };
+		62E513CD27030FA100FDD3F7 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CCC6642701D69D003D3E5B /* ComposableNavigator in Frameworks */,
+				62CCC66D2701F04A003D3E5B /* SimpleCheckbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,13 +85,7 @@
 		62C8F48527002771006DD85F /* Turtles */ = {
 			isa = PBXGroup;
 			children = (
-				62C8F48627002771006DD85F /* TurtlesApp.swift */,
-				62C8F48827002771006DD85F /* BlueprintList.swift */,
-				62C8F49D270032BC006DD85F /* BlueprintRow.swift */,
-				62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */,
-				62C8F4A127003450006DD85F /* ManifestRow.swift */,
-				62C8F49B27003223006DD85F /* ListList.swift */,
-				62C8F4992700303D006DD85F /* AlertView.swift */,
+				62E513D327030FEB00FDD3F7 /* UI */,
 				62C8F494270029F9006DD85F /* Model */,
 				62C8F48A27002772006DD85F /* Assets.xcassets */,
 				62C8F48C27002772006DD85F /* Preview Content */,
@@ -93,10 +105,63 @@
 			isa = PBXGroup;
 			children = (
 				62C8F49527002A0F006DD85F /* Blueprint.swift */,
-				62C8F49727002A1C006DD85F /* Task.swift */,
+				62CCC65A2701C865003D3E5B /* Mocks.swift */,
+				62C8F49727002A1C006DD85F /* BlueprintTask.swift */,
 				62C8F4A3270034D7006DD85F /* Manifest.swift */,
+				62CCC6652701EEB6003D3E5B /* ManifestTask.swift */,
+				62E513CD27030FA100FDD3F7 /* Database.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		62E513CF27030FAC00FDD3F7 /* Blueprints */ = {
+			isa = PBXGroup;
+			children = (
+				62C8F48827002771006DD85F /* BlueprintList.swift */,
+				62C8F49D270032BC006DD85F /* BlueprintView.swift */,
+				62C8F49F270032E5006DD85F /* BlueprintTaskRow.swift */,
+			);
+			path = Blueprints;
+			sourceTree = "<group>";
+		};
+		62E513D027030FBB00FDD3F7 /* Manifests */ = {
+			isa = PBXGroup;
+			children = (
+				62C8F4A127003450006DD85F /* ManifestRow.swift */,
+				62CCC6672701EF4E003D3E5B /* ManifestList.swift */,
+				62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */,
+			);
+			path = Manifests;
+			sourceTree = "<group>";
+		};
+		62E513D127030FC800FDD3F7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				62C8F48627002771006DD85F /* TurtlesApp.swift */,
+				62C8F49B27003223006DD85F /* ListList.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		62E513D227030FD500FDD3F7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				62CCC66E2701FB8C003D3E5B /* TextEntryModal.swift */,
+				62C8F4992700303D006DD85F /* AlertView.swift */,
+				622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		62E513D327030FEB00FDD3F7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				62E513D127030FC800FDD3F7 /* Root */,
+				62E513CF27030FAC00FDD3F7 /* Blueprints */,
+				62E513D027030FBB00FDD3F7 /* Manifests */,
+				62E513D227030FD500FDD3F7 /* Shared */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +180,10 @@
 			dependencies = (
 			);
 			name = Turtles;
+			packageProductDependencies = (
+				62CCC6632701D69D003D3E5B /* ComposableNavigator */,
+				62CCC66C2701F04A003D3E5B /* SimpleCheckbox */,
+			);
 			productName = Turtles;
 			productReference = 62C8F48327002770006DD85F /* Turtles.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +212,10 @@
 				Base,
 			);
 			mainGroup = 62C8F47A27002770006DD85F;
+			packageReferences = (
+				62CCC6622701D69D003D3E5B /* XCRemoteSwiftPackageReference "swift-composable-navigator" */,
+				62CCC66B2701F04A003D3E5B /* XCRemoteSwiftPackageReference "SimpleCheckbox" */,
+			);
 			productRefGroup = 62C8F48427002770006DD85F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,14 +242,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CCC65B2701C865003D3E5B /* Mocks.swift in Sources */,
+				62CCC6682701EF4E003D3E5B /* ManifestList.swift in Sources */,
+				62CCC66F2701FB8C003D3E5B /* TextEntryModal.swift in Sources */,
 				62C8F49A2700303D006DD85F /* AlertView.swift in Sources */,
 				62C8F4A0270032E5006DD85F /* BlueprintTaskRow.swift in Sources */,
+				62CCC6662701EEB6003D3E5B /* ManifestTask.swift in Sources */,
 				62C8F4A4270034D7006DD85F /* Manifest.swift in Sources */,
-				62C8F49827002A1C006DD85F /* Task.swift in Sources */,
+				62CCC66A2701EFAA003D3E5B /* ManifestTaskRow.swift in Sources */,
+				62C8F49827002A1C006DD85F /* BlueprintTask.swift in Sources */,
 				62C8F4A227003450006DD85F /* ManifestRow.swift in Sources */,
 				62C8F48927002771006DD85F /* BlueprintList.swift in Sources */,
 				62C8F49627002A0F006DD85F /* Blueprint.swift in Sources */,
-				62C8F49E270032BC006DD85F /* BlueprintRow.swift in Sources */,
+				622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */,
+				62E513CE27030FA100FDD3F7 /* Database.swift in Sources */,
+				62C8F49E270032BC006DD85F /* BlueprintView.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
 			);
@@ -383,6 +463,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		62CCC6622701D69D003D3E5B /* XCRemoteSwiftPackageReference "swift-composable-navigator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bahn-X/swift-composable-navigator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+		62CCC66B2701F04A003D3E5B /* XCRemoteSwiftPackageReference "SimpleCheckbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BeauNouvelle/SimpleCheckbox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62CCC6632701D69D003D3E5B /* ComposableNavigator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62CCC6622701D69D003D3E5B /* XCRemoteSwiftPackageReference "swift-composable-navigator" */;
+			productName = ComposableNavigator;
+		};
+		62CCC66C2701F04A003D3E5B /* SimpleCheckbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62CCC66B2701F04A003D3E5B /* XCRemoteSwiftPackageReference "SimpleCheckbox" */;
+			productName = SimpleCheckbox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 62C8F47B27002770006DD85F /* Project object */;
 }

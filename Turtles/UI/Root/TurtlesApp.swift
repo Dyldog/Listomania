@@ -11,7 +11,9 @@ import SwiftUI
 struct TurtlesApp: App {
     var body: some Scene {
         WindowGroup {
-            BlueprintList(blueprint: .mock)
+            NavigationView {
+                ListList(database: Database())
+            }
         }
     }
 }

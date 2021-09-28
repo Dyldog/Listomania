@@ -10,11 +10,13 @@ import Foundation
 struct Manifest: Identifiable {
     let id: UUID
     let title: String
-    let tasks: [Task]
+    var tasks: [ManifestTask]
+    var incompleteTasks: [ManifestTask] { tasks.filter { $0.completed == false }}
+    var completedTasks: [ManifestTask] { tasks.filter { $0.completed == true }}
 }
 
 extension Manifest {
     init(blueprint: Blueprint) {
-        self.init(id: .init(), title: blueprint.title, tasks: blueprint.allTasks())
+        self.init(id: .init(), title: blueprint.title, tasks: blueprint.allTasks().map { $0.manifest() })
     }
 }

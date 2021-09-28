@@ -8,8 +8,16 @@
 import Foundation
 import SwiftUI
 
-enum BlueprintItem: Identifiable {
-    case task(Task)
+enum BlueprintItem: Identifiable, Equatable {
+    static func == (lhs: BlueprintItem, rhs: BlueprintItem) -> Bool {
+        switch (lhs, rhs) {
+        case let (.task(a), .task(b)): return a.id == b.id
+        case let (.blueprint(a), .blueprint(b)): return a.id == b.id
+        default: return false
+        }
+    }
+    
+    case task(BlueprintTask)
     case blueprint(Blueprint)
     
     var id: UUID {
@@ -29,34 +37,28 @@ enum BlueprintItem: Identifiable {
 
 struct Blueprint: Identifiable {
     let id: UUID
-    let title: String
+    var title: String
     var items: [BlueprintItem]
     
-    func allTasks() -> [Task] {
-        return items.flatMap { item -> [Task] in
+    func allTasks() -> [BlueprintTask] {
+        return items.flatMap { item -> [BlueprintTask] in
             switch item {
             case .task(let task): return [task]
             case .blueprint(let blueprint): return blueprint.allTasks()
             }
         }
     }
-}
-
-extension Blueprint {
-    static var mock: Blueprint {
-        let subBlueprint = Blueprint(id: .init(), title: "Sub Blueprint", items: [
-            .task(.init(id: .init(), title: "One")),
-            .task(.init(id: .init(), title: "Two")),
-            .task(.init(id: .init(), title: "Three"))
-        ])
-        
-        let items: [BlueprintItem] = [
-            .task(.init(id: .init(), title: "Test Task")),
-            .blueprint(subBlueprint)
-            
-        ]
-        let blueprint = Blueprint(id: .init(), title: "Test", items: items)
-        
-        return blueprint
+    
+    func manifest() -> Manifest {
+        Manifest(id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
+    }
+    
+    func allBlueprints() -> [Blueprint] {
+        return items.flatMap { item -> [Blueprint] in
+            switch item {
+            case .task: return []
+            case .blueprint(let blueprint): return blueprint.allBlueprints()
+            }
+        } + [self]
     }
 }
