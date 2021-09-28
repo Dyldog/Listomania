@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+Identifiable.swift"; sourceTree = "<group>"; };
-		62C8F48327002770006DD85F /* Turtles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turtles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C8F48327002770006DD85F /* Listomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8F48627002771006DD85F /* TurtlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtlesApp.swift; sourceTree = "<group>"; };
 		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
 		62C8F48A27002772006DD85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		62C8F48427002770006DD85F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62C8F48327002770006DD85F /* Turtles.app */,
+				62C8F48327002770006DD85F /* Listomania.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		62C8F48227002770006DD85F /* Turtles */ = {
+		62C8F48227002770006DD85F /* Listomania */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62C8F49127002772006DD85F /* Build configuration list for PBXNativeTarget "Turtles" */;
+			buildConfigurationList = 62C8F49127002772006DD85F /* Build configuration list for PBXNativeTarget "Listomania" */;
 			buildPhases = (
 				62C8F47F27002770006DD85F /* Sources */,
 				62C8F48027002770006DD85F /* Frameworks */,
@@ -196,13 +196,13 @@
 			);
 			dependencies = (
 			);
-			name = Turtles;
+			name = Listomania;
 			packageProductDependencies = (
 				62CCC6632701D69D003D3E5B /* ComposableNavigator */,
 				62CCC66C2701F04A003D3E5B /* SimpleCheckbox */,
 			);
 			productName = Turtles;
-			productReference = 62C8F48327002770006DD85F /* Turtles.app */;
+			productReference = 62C8F48327002770006DD85F /* Listomania.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62C8F47E27002770006DD85F /* Build configuration list for PBXProject "Turtles" */;
+			buildConfigurationList = 62C8F47E27002770006DD85F /* Build configuration list for PBXProject "Listomania" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -237,7 +237,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				62C8F48227002770006DD85F /* Turtles */,
+				62C8F48227002770006DD85F /* Listomania */,
 			);
 		};
 /* End PBXProject section */
@@ -466,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62C8F47E27002770006DD85F /* Build configuration list for PBXProject "Turtles" */ = {
+		62C8F47E27002770006DD85F /* Build configuration list for PBXProject "Listomania" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62C8F48F27002772006DD85F /* Debug */,
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62C8F49127002772006DD85F /* Build configuration list for PBXNativeTarget "Turtles" */ = {
+		62C8F49127002772006DD85F /* Build configuration list for PBXNativeTarget "Listomania" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62C8F49227002772006DD85F /* Debug */,
