@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */; };
+		629F9EED27269BCD00938981 /* AddTaskToManifestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */; };
+		629F9EEF2726A0C100938981 /* RaisedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EEE2726A0C100938981 /* RaisedButtonStyle.swift */; };
+		629F9EF12726A2B000938981 /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EF02726A2B000938981 /* BackgroundBlurView.swift */; };
 		62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48627002771006DD85F /* TurtlesApp.swift */; };
 		62C8F48927002771006DD85F /* BlueprintList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* BlueprintList.swift */; };
 		62C8F48B27002772006DD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48A27002772006DD85F /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+Identifiable.swift"; sourceTree = "<group>"; };
+		629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskToManifestView.swift; sourceTree = "<group>"; };
+		629F9EEE2726A0C100938981 /* RaisedButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButtonStyle.swift; sourceTree = "<group>"; };
+		629F9EF02726A2B000938981 /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		62C8F48327002770006DD85F /* Listomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8F48627002771006DD85F /* TurtlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtlesApp.swift; sourceTree = "<group>"; };
 		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			children = (
 				62C8F4A127003450006DD85F /* ManifestRow.swift */,
 				62CCC6672701EF4E003D3E5B /* ManifestList.swift */,
+				629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */,
 				62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */,
 			);
 			path = Manifests;
@@ -173,10 +180,12 @@
 		62E513D327030FEB00FDD3F7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				629F9EEE2726A0C100938981 /* RaisedButtonStyle.swift */,
 				62E513D127030FC800FDD3F7 /* Root */,
 				62E513CF27030FAC00FDD3F7 /* Blueprints */,
 				62E513D027030FBB00FDD3F7 /* Manifests */,
 				62E513D227030FD500FDD3F7 /* Shared */,
+				629F9EF02726A2B000938981 /* BackgroundBlurView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -273,10 +282,13 @@
 				62C8F48927002771006DD85F /* BlueprintList.swift in Sources */,
 				62C8F49627002A0F006DD85F /* DeflatedBlueprint.swift in Sources */,
 				622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */,
+				629F9EF12726A2B000938981 /* BackgroundBlurView.swift in Sources */,
 				62E513CE27030FA100FDD3F7 /* Database.swift in Sources */,
+				629F9EEF2726A0C100938981 /* RaisedButtonStyle.swift in Sources */,
 				62E513D527032DD100FDD3F7 /* Blueprint.swift in Sources */,
 				62C8F49E270032BC006DD85F /* BlueprintView.swift in Sources */,
 				62E513D727032E0900FDD3F7 /* BlueprintItem.swift in Sources */,
+				629F9EED27269BCD00938981 /* AddTaskToManifestView.swift in Sources */,
 				62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */,
 				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,

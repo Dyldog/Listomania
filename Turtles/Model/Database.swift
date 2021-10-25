@@ -60,6 +60,15 @@ class Database: ObservableObject {
         persistData()
     }
     
+    func addTask(_ task: ManifestTask, to manifest: UUID) {
+        guard let idx = manifests.firstIndex(where: {$0.id == manifest }) else { return }
+        var manifest = manifests[idx]
+        manifest.tasks.append(task)
+        manifests[idx] = manifest
+        
+        persistData()
+    }
+    
     func addBlueprint(titled title: String, to blueprintID: UUID? = nil) {
         let blueprint = DeflatedBlueprint(id: .init(), title: title, items: [])
         deflatedBlueprints.append(blueprint)
