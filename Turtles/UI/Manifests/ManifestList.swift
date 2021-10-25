@@ -69,6 +69,10 @@ struct ManifestList: View {
 
 struct ManifestList_Previews: PreviewProvider {
     static var previews: some View {
-        return ManifestList(manifestID: Manifest.mock.id, database: Database())
+        let database = Database.mock()
+        return ManifestList(
+            manifestID: database.manifests.first!.id,
+            database: database
+        )
     }
 }

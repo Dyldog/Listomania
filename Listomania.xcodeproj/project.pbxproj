@@ -13,6 +13,7 @@
 		629F9EF12726A2B000938981 /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EF02726A2B000938981 /* BackgroundBlurView.swift */; };
 		629F9EF32726AE1A00938981 /* TaskNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EF22726AE1A00938981 /* TaskNotificationsManager.swift */; };
 		629F9EF52726AF7E00938981 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EF42726AF7E00938981 /* NotificationHandler.swift */; };
+		629F9EF72726BA4800938981 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EF62726BA4800938981 /* CheckView.swift */; };
 		62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48627002771006DD85F /* TurtlesApp.swift */; };
 		62C8F48927002771006DD85F /* BlueprintList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8F48827002771006DD85F /* BlueprintList.swift */; };
 		62C8F48B27002772006DD85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8F48A27002772006DD85F /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		629F9EF02726A2B000938981 /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		629F9EF22726AE1A00938981 /* TaskNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationsManager.swift; sourceTree = "<group>"; };
 		629F9EF42726AF7E00938981 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		629F9EF62726BA4800938981 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		62C8F48327002770006DD85F /* Listomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8F48627002771006DD85F /* TurtlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtlesApp.swift; sourceTree = "<group>"; };
 		62C8F48827002771006DD85F /* BlueprintList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintList.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				62CCC6672701EF4E003D3E5B /* ManifestList.swift */,
 				629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */,
 				62CCC6692701EFAA003D3E5B /* ManifestTaskRow.swift */,
+				629F9EF62726BA4800938981 /* CheckView.swift */,
 			);
 			path = Manifests;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
+				629F9EF72726BA4800938981 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

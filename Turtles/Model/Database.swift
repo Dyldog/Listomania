@@ -196,3 +196,11 @@ extension Database {
         case blueprints
     }
 }
+
+extension Database {
+    static func mock() -> Database {
+        let databse = Database()
+        databse.manifests = [Manifest.mock]
+        return databse
+    }
+}

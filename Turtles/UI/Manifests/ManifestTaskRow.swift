@@ -11,10 +11,13 @@ struct ManifestTaskRow: View {
     let task: ManifestTask
     let onCompletionChange: (Bool) -> Void
     var body: some View {
-        HStack {
-            Text(task.title)
-            Spacer()
+        HStack(alignment: .center, spacing: 12) {
             CheckView(isChecked: task.completed, onChange: onCompletionChange)
+                .frame(height: 20)
+            Text(task.title)
+                .font(.headline)
+                .fontWeight(.regular)
+            
         }
     }
 }
@@ -23,21 +26,4 @@ struct ManifestTaskRow_Previews: PreviewProvider {
     static var previews: some View {
         ManifestTaskRow(task: ManifestTask(id: .init(), title: "Test", completedDate: nil), onCompletionChange: { _ in })
     }
-}
-
-struct CheckView: View {
-   @State var isChecked:Bool = false
-   func toggle(){
-       isChecked = !isChecked
-       onChange(isChecked)
-   }
-    let onChange: (Bool) -> Void
-   var body: some View {
-       Button(action: toggle){
-           Image(systemName: isChecked ? "checkmark.square": "square")
-
-       }
-
-   }
-
 }

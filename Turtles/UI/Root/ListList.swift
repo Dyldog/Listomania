@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListList: View {
+    @State var editMode: EditMode = .inactive // #1
     @ObservedObject var database: Database
     
     var manifests: [Manifest] {
@@ -21,7 +22,6 @@ struct ListList: View {
         set: { state = ($0 ? .showingAddBlueprintAlert : .normal) }
     ) }
     
-    @State var navigate: Bool = false
     var body: some View {
         List {
             Section(header: Text("Manifests")) {
@@ -33,7 +33,10 @@ struct ListList: View {
                     }
 
                 }
-                .onMove(perform: { database.moveManifest(atIndexes: $0, toIndex: $1) })
+                .onMove(perform: {
+                    database.moveManifest(atIndexes: $0, toIndex: $1)
+                    
+                })
             }
             
             Section(header: Text("Blueprints")) {
@@ -55,7 +58,9 @@ struct ListList: View {
 
                     }
                 }
-                .onMove(perform: { database.moveBlueprint(atIndexes: $0, toIndex: $1) })
+                .onMove(perform: {
+                    database.moveBlueprint(atIndexes: $0, toIndex: $1)
+                })
                 
                 Button {
                     showingAddBlueprintAlert.wrappedValue = true
@@ -64,7 +69,10 @@ struct ListList: View {
                 }
             }
         }
+        .edgesIgnoringSafeArea(.all)
         .navigationBarTitle("Lists")
+        .toolbar { EditButton() }
+        .environment(\.editMode, $editMode) //#2
         .alert(isPresented: showingAddBlueprintAlert, TextAlert(
             title: "Add Blueprint", message: nil, action: { text in
                 if let text = text, !text.isEmpty {
@@ -72,7 +80,7 @@ struct ListList: View {
                 }
             }
         ))
-//        .toolbar { EditButton() }
+
     }
     
     func didAddBlueprint(withTitle title: String) {
