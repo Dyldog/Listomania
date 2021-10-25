@@ -8,6 +8,7 @@
 import Foundation
 
 struct Manifest: Identifiable, Codable {
+    let blueprintID: UUID
     let id: UUID
     let title: String
     var tasks: [ManifestTask]
@@ -21,6 +22,6 @@ struct Manifest: Identifiable, Codable {
 
 extension Manifest {
     init(blueprint: Blueprint) {
-        self.init(id: .init(), title: blueprint.title, tasks: blueprint.allTasks().map { $0.manifest() })
+        self.init(blueprintID: blueprint.id, id: .init(), title: blueprint.title, tasks: blueprint.allTasks().map { $0.manifest() })
     }
 }

@@ -28,6 +28,6 @@ class Blueprint: Codable, Identifiable {
     }
     
     func manifest() -> Manifest {
-        Manifest(id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
+        Manifest(blueprintID: id, id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
     }
 }

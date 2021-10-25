@@ -28,7 +28,7 @@ extension DeflatedBlueprint {
 
 extension Manifest {
     static var mock: Manifest {
-        return Manifest(id: .init(), title: "Title", tasks: [
+        return Manifest(blueprintID: DeflatedBlueprint.mock.first!.id, id: .init(), title: "Title", tasks: [
             .init(id: .init(), title: "1", completedDate: nil),
             .init(id: .init(), title: "2", completedDate: nil),
             .init(id: .init(), title: "3", completedDate: nil)
