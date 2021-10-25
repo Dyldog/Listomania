@@ -34,6 +34,15 @@ struct ManifestList: View {
                     to: manifest.id
                 )
                 
+                if addToBlueprint {
+                    database.addTask(
+                        BlueprintTask(
+                            id: .init(),
+                            title: title
+                        ),
+                        to: manifest.blueprintID
+                    )
+                }
             }
         }
         .navigationTitle(manifest.title)
