@@ -27,7 +27,7 @@ struct ListList: View {
             Section(header: Text("Manifests")) {
                 ForEach(manifests) { manifest in
                     NavigationLink {
-                        ManifestList(manifest: manifest, database: database)
+                        ManifestList(manifestID: manifest.id, database: database)
                     } label: {
                         ManifestRow(manifest: manifest)
                     }

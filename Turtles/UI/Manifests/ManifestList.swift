@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ManifestList: View {
-    let manifest: Manifest
-    let database: Database
+    @State var manifestID: UUID
+    var manifest: Manifest { database.manifest(with: manifestID)! }
+    @ObservedObject var database: Database
     
     var body: some View {
         List {
@@ -30,6 +31,6 @@ struct ManifestList: View {
 
 struct ManifestList_Previews: PreviewProvider {
     static var previews: some View {
-        return ManifestList(manifest: .mock, database: Database())
+        return ManifestList(manifestID: Manifest.mock.id, database: Database())
     }
 }
