@@ -13,6 +13,9 @@ struct TurtlesApp: App {
         WindowGroup {
             NavigationView {
                 ListList(database: Database())
+                .onAppear {
+                  NotificationHandler.shared.requestPermission()
+               }
             }
         }
     }

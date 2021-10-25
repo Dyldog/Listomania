@@ -30,7 +30,9 @@ class Database: ObservableObject {
     
     func makeManifest(fromBlueprintWithID id: UUID) {
         guard let blueprint = blueprint(with: id) else { return }
-        manifests.append(blueprint.manifest())
+        let manifest = blueprint.manifest()
+        manifests.append(manifest)
+        TaskNotificationsManager.scheduleNotifications(forNewManifest: manifest)
         persistData()
     }
     
@@ -97,6 +99,8 @@ class Database: ObservableObject {
         guard let taskIdx = manifest.tasks.firstIndex(where: { $0.id == taskID }) else { return }
         manifest.tasks[taskIdx].completed = newStatus
         manifests[manifestIdx] = manifest
+        
+        TaskNotificationsManager.handleTaskCompletion(forManifest: manifest)
         
         persistData()
     }
@@ -166,6 +170,15 @@ class Database: ObservableObject {
         do {
             if let manifestsData = UserDefaults.standard.data(forKey: UserDefaultsKeys.manifests.rawValue) {
                 manifests = try decoder.decode([Manifest].self, from: manifestsData)
+                
+                
+                manifests.forEach {
+                    NotificationHandler.shared.removeNotifications([$0.id.uuidString])
+                    
+                    if $0.completed == false {
+                        TaskNotificationsManager.scheduleNotifications(forNewManifest: $0)
+                    }
+                }
             }
             
             if let blueprintData = UserDefaults.standard.data(forKey: UserDefaultsKeys.blueprints.rawValue) {

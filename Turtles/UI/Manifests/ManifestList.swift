@@ -12,10 +12,14 @@ struct ManifestList: View {
     var manifest: Manifest { database.manifest(with: manifestID)! }
     @ObservedObject var database: Database
     @State private var showAddView: Bool = false
+    var sortedTasks: [ManifestTask] {
+        manifest.tasks.filter { $0.completed == false } +
+        manifest.tasks.filter { $0.completed == true }
+    }
     
     var body: some View {
         List {
-            ForEach(manifest.tasks) { task in
+            ForEach(sortedTasks) { task in
                 ManifestTaskRow(task: task, onCompletionChange: { self.onTaskChange(taskID: task.id, newStatus: $0) })
                     .buttonStyle(PlainButtonStyle())
             }
@@ -57,7 +61,9 @@ struct ManifestList: View {
     }
     
     func onTaskChange(taskID: UUID, newStatus: Bool) {
-        database.updateCompletionStatus(for: taskID, to: newStatus, in: manifest.id)
+        withAnimation {
+            database.updateCompletionStatus(for: taskID, to: newStatus, in: manifest.id)
+        }
     }
 }
 

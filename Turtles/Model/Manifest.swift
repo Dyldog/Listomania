@@ -16,7 +16,7 @@ struct Manifest: Identifiable, Codable {
     var completedTasks: [ManifestTask] { tasks.filter { $0.completed == true }}
     
     var completed: Bool {
-        return self.tasks.count != self.completedTasks.count
+        return self.tasks.count == self.completedTasks.count
     }
 }
 

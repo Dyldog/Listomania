@@ -11,7 +11,7 @@ struct ListList: View {
     @ObservedObject var database: Database
     
     var manifests: [Manifest] {
-        database.manifests.filter { $0.completed }
+        database.manifests.filter { $0.completed == false }
     }
     
     @State private var state: ScreenState = .normal
@@ -45,7 +45,9 @@ struct ListList: View {
                     }
                     .swipeActions() {
                         Button {
-                            database.makeManifest(fromBlueprintWithID: blueprint.id)
+                            withAnimation {
+                                database.makeManifest(fromBlueprintWithID: blueprint.id)
+                            }
                         } label: {
                             Label("Make Manifest", systemImage: "wand.and.stars")
                         }
