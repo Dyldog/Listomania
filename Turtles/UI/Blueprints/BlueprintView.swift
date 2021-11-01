@@ -16,6 +16,11 @@ struct BlueprintView: View {
             Text("\(blueprint.allTasks().count) tasks")
                 .font(.caption)
                 .foregroundColor(.secondary)
+            
+            if let subString = blueprint.childSubBlueprintString().mapEmptyToNil() {
+                Text(subString)
+                    .font(.caption2)
+            }
         }
             
     }

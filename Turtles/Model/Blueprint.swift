@@ -31,6 +31,33 @@ class Blueprint: Codable, Identifiable {
         }.uniqueElements()
     }
     
+    func subBlueprintString() -> String {
+        let children = self.directChildBlueprints()
+        let selfTitle = "→ \(self.title)"
+        if children.isEmpty {
+            return selfTitle
+        } else {
+            return ([selfTitle] + children.map { child in
+                child.subBlueprintString()
+                    .components(separatedBy: "\n")
+                    .map { "    " + $0 }
+                    .joined(separator: "\n")
+            }).joined(separator: "\n")
+        }
+    }
+    
+    func childSubBlueprintString() -> String {
+        subBlueprintString().split(separator: "\n").dropFirst().joined(separator: "\n")
+    }
+    
+    func directChildBlueprints() -> [Blueprint] {
+        items.compactMap {
+            switch $0 {
+            case .blueprint(let blueprint): return blueprint
+            case .task: return nil
+            }
+        }
+    }
     func justBlueprints() -> [Blueprint] {
         return items.flatMap { item -> [Blueprint] in
             switch item {
@@ -42,6 +69,10 @@ class Blueprint: Codable, Identifiable {
     
     func manifest() -> Manifest {
         Manifest(blueprintID: id, id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
+    }
+    
+    func subBlueprintString() {
+        justBlueprints().map { "→ \($0.title)"}
     }
 }
 

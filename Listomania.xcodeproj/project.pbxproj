@@ -40,6 +40,7 @@
 		62E513DB270338EE00FDD3F7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DA270338EE00FDD3F7 /* SearchView.swift */; };
 		62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */; };
 		FC2C0027272F9521001399EF /* Array+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C0026272F9521001399EF /* Array+Unique.swift */; };
+		FC2C0029272F9A2B001399EF /* String+MapEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C0028272F9A2B001399EF /* String+MapEmpty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintSearchItem.swift; sourceTree = "<group>"; };
 		62E513DE2703498600FDD3F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC2C0026272F9521001399EF /* Array+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Unique.swift"; sourceTree = "<group>"; };
+		FC2C0028272F9A2B001399EF /* String+MapEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MapEmpty.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FC2C0026272F9521001399EF /* Array+Unique.swift */,
+				FC2C0028272F9A2B001399EF /* String+MapEmpty.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				FC2C0027272F9521001399EF /* Array+Unique.swift in Sources */,
 				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
+				FC2C0029272F9A2B001399EF /* String+MapEmpty.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
 				629F9EF72726BA4800938981 /* CheckView.swift in Sources */,
 			);
