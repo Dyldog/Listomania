@@ -39,6 +39,7 @@
 		62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513D82703387500FDD3F7 /* SearchBar.swift */; };
 		62E513DB270338EE00FDD3F7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DA270338EE00FDD3F7 /* SearchView.swift */; };
 		62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */; };
+		FC2C0027272F9521001399EF /* Array+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C0026272F9521001399EF /* Array+Unique.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		62E513DA270338EE00FDD3F7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		62E513DC27033DB500FDD3F7 /* BlueprintSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintSearchItem.swift; sourceTree = "<group>"; };
 		62E513DE2703498600FDD3F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC2C0026272F9521001399EF /* Array+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Unique.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		62C8F48527002771006DD85F /* Turtles */ = {
 			isa = PBXGroup;
 			children = (
+				FC2C0025272F9514001399EF /* Extensions */,
 				62E513D327030FEB00FDD3F7 /* UI */,
 				62C8F494270029F9006DD85F /* Model */,
 				62C8F48A27002772006DD85F /* Assets.xcassets */,
@@ -197,6 +200,14 @@
 				629F9EF02726A2B000938981 /* BackgroundBlurView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		FC2C0025272F9514001399EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC2C0026272F9521001399EF /* Array+Unique.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				62E513D727032E0900FDD3F7 /* BlueprintItem.swift in Sources */,
 				629F9EED27269BCD00938981 /* AddTaskToManifestView.swift in Sources */,
 				62E513DD27033DB500FDD3F7 /* BlueprintSearchItem.swift in Sources */,
+				FC2C0027272F9521001399EF /* Array+Unique.swift in Sources */,
 				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,

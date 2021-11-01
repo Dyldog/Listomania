@@ -15,3 +15,7 @@ struct BlueprintTask: Identifiable, Codable {
         return ManifestTask(id: .init(), title: title, completedDate: nil)
     }
 }
+
+extension BlueprintTask: Hashable {
+    
+}

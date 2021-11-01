@@ -19,15 +19,38 @@ class Blueprint: Codable, Identifiable {
     }
 
     func allTasks() -> [BlueprintTask] {
+        return justTasks() + justBlueprints().flatMap { $0.justTasks() }
+    }
+    
+    func justTasks() -> [BlueprintTask] {
         return items.flatMap { item -> [BlueprintTask] in
             switch item {
             case .task(let task): return [task]
-            case .blueprint(let blueprint): return blueprint.allTasks()
+            case .blueprint(let blueprint): return blueprint.justTasks()
             }
-        }
+        }.uniqueElements()
+    }
+    
+    func justBlueprints() -> [Blueprint] {
+        return items.flatMap { item -> [Blueprint] in
+            switch item {
+            case .task: return []
+            case .blueprint(let blueprint): return blueprint.justBlueprints()
+            }
+        }.uniqueElements()
     }
     
     func manifest() -> Manifest {
         Manifest(blueprintID: id, id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
+    }
+}
+
+extension Blueprint: Hashable {
+    static func == (lhs: Blueprint, rhs: Blueprint) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
     }
 }
