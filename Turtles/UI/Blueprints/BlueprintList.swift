@@ -12,34 +12,18 @@ struct BlueprintList: View {
     
     @State var blueprintID: UUID
     @ObservedObject var database: Database
-    var blueprint: Blueprint { database.blueprint(with: blueprintID)! }
+    var blueprint: Blueprint? { database.blueprint(with: blueprintID) }
 
 
     @State private var state: ScreenState = .normal
-    private var showingAddSheet: Binding<Bool> { Binding(
-        get: { return state == .showingActionSheet},
-        set: { state = ($0 ? .showingActionSheet : .normal) }
-    ) }
-    
-    private var showingAddTaskAlert: Binding<Bool> { Binding(
-        get: { return state == .showingAddTaskAlert},
-        set: { state = ($0 ? .showingAddTaskAlert : .normal) }
-    ) }
-    
-    private var showingAddBlueprintAlert: Binding<Bool> { Binding(
-        get: { return state == .showingAddBlueprintAlert },
-        set: { state = ($0 ? .showingAddBlueprintAlert : .normal) }
-    ) }
-    
-    private var showingAddExistingBlueprintSheet: Binding<Bool> { Binding(
-        get: { return state == .showingAddExistingBlueprintSheet },
-        set: { state = ($0 ? .showingAddExistingBlueprintSheet : .normal) }
-    ) }
     
     var body: some View {
         List{
-            ForEach(blueprint.items) { item in
+            ForEach(blueprint?.items ?? []) { item in
                 self.view(for: item)
+                    .onDrag { // mean drag a row container
+                         return NSItemProvider()
+                    }
                     .swipeActions {
                         Button {
                             database.deleteItem(item, from: blueprintID)
@@ -51,19 +35,19 @@ struct BlueprintList: View {
             }
             .onMove(perform: { database.moveItem(atIndexes: $0, toIndex: $1, inBlueprintWithID: blueprintID) })
         }
-        .navigationTitle(blueprint.title)
-        .confirmationDialog("Add", isPresented: showingAddSheet, actions: {
-            Button("Task", action: { showingAddTaskAlert.wrappedValue = true })
-            Button("Blueprint", action: { showingAddExistingBlueprintSheet.wrappedValue = true })
+        .navigationTitle(blueprint?.title ?? "")
+        .confirmationDialog("Add", isPresented: $state.equals(.showingActionSheet, default: .normal), actions: {
+            Button("Task", action: { state = .showingAddTaskAlert })
+            Button("Blueprint", action: { state = .showingAddExistingBlueprintSheet })
         })
-        .alert(isPresented: showingAddTaskAlert, TextAlert(
+        .alert(isPresented: $state.equals(.showingAddTaskAlert, default: .normal), TextAlert(
             title: "Add Task", message: nil, action: { text in
                 if let text = text, !text.isEmpty {
                     self.didAddTask(withTitle: text)
                 }
             }
         ))
-        .sheet(isPresented: showingAddExistingBlueprintSheet, content: {
+        .sheet(isPresented: $state.equals(.showingAddExistingBlueprintSheet, default: .normal), content: {
             SearchView(
                 title: "Add Blueprint",
                 items: searchItems()) { selected, searchText in
@@ -77,7 +61,7 @@ struct BlueprintList: View {
                     state = .normal
                 }
         })
-        .alert(isPresented: showingAddBlueprintAlert, TextAlert(
+        .alert(isPresented: $state.equals(.showingAddBlueprintAlert, default: .normal), TextAlert(
             title: "Add Blueprint", message: nil, action: { text in
                 if let text = text, !text.isEmpty {
                     self.didAddBlueprint(withTitle: text)
@@ -86,7 +70,7 @@ struct BlueprintList: View {
         ))
         .toolbar(content: {
             Button("Add", action: {
-                showingAddSheet.wrappedValue = true
+                state = .showingActionSheet
             })
         })
     }

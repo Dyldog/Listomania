@@ -18,7 +18,7 @@ class TaskNotificationsManager {
         )
     }
     
-    private static func removeNotifications(forManifest manifest: Manifest) {
+    static func removeNotifications(forManifest manifest: Manifest) {
         NotificationHandler.shared.removeNotifications([manifest.id.uuidString])
     }
     

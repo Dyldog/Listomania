@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BlueprintItem: Codable, Identifiable {
+enum BlueprintItem: Codable, Identifiable, Equatable {
     case task(BlueprintTask)
     case blueprint(Blueprint)
     

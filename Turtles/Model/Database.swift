@@ -5,15 +5,44 @@
 //  Created by Dylan Elliott on 28/9/21.
 //
 
-import Foundation
+import UIKit
+import Combine
 
-class Database: ObservableObject {
-    @Published private var deflatedBlueprints: [DeflatedBlueprint] = []
-    var blueprints: [Blueprint] { deflatedBlueprints.map(inflate) }
-    @Published var manifests: [Manifest] = []
+enum Debug {
+    static var forceDebugMode: Bool?
     
-    init() {
-        restorePersistedData()
+    static var isDebugMode: Bool {
+        return forceDebugMode ?? UIApplication.isUITest
+    }
+}
+
+class Database: NSObject, ObservableObject {
+    @Published var deflatedBlueprints: [DeflatedBlueprint] = [] { didSet { blueprints = inflatedBlueprints }}
+    @Published var blueprints: [Blueprint] = []
+    @Published var manifests: [Manifest] = [] 
+    
+    override init() {
+        super.init()
+        
+        if Debug.isDebugMode {
+            let id1 = UUID()
+            deflatedBlueprints = [
+                .init(id: id1, title: "Going Out", items: [
+                    .task(.init(id: .init(), title: "Keys")),
+                    .task(.init(id: .init(), title: "Wallet")),
+                    .task(.init(id: .init(), title: "Vape")),
+                ]),
+                .init(id: .init(), title: "Work", items: [
+                    .blueprint(id1),
+                    .task(.init(id: .init(), title: "Laptop")),
+                ]),
+                .init(id: .init(), title: "Camping", items: [])
+            ]
+            
+            NotificationHandler.shared.clearNotifications()
+        } else {
+            restorePersistedData()
+        }
     }
     
     private func deflatedBlueprint(with id: UUID) -> DeflatedBlueprint? {
@@ -43,6 +72,24 @@ class Database: ObservableObject {
         return blueprint
     }
     
+    func deleteBlueprint(_ id: UUID) {
+        deflatedBlueprints.removeAll(where: { $0.id == id })
+        manifests.filter { $0.blueprintID == id }.forEach {
+            deleteManifest($0.id)
+        }
+        persistData()
+    }
+    
+    func deleteManifest(_ id: UUID) {
+        guard let idx = manifests.firstIndex(where: {$0.id == id }) else { return }
+        
+        TaskNotificationsManager.removeNotifications(forManifest: manifests[idx])
+        
+        manifests.removeAll(where: { $0.id == id })
+        
+        persistData()
+    }
+    
     func deleteItem(_ item: BlueprintItem, from blueprint: UUID) {
         guard let idx = deflatedBlueprints.firstIndex(where: {$0.id == blueprint }) else { return }
         var blueprint = deflatedBlueprints[idx]
@@ -60,6 +107,8 @@ class Database: ObservableObject {
         deflatedBlueprints[idx] = blueprint
         
         persistData()
+        
+        objectWillChange.send()
     }
     
     func addTask(_ task: ManifestTask, to manifest: UUID) {
@@ -118,6 +167,12 @@ class Database: ObservableObject {
         return Blueprint(id: blueprint.id, title: blueprint.title, items: inflatedItems)
     }
     
+    private func inflate(_ blueprints: [DeflatedBlueprint]) -> [Blueprint] {
+        blueprints.map(inflate)
+    }
+    
+    private var inflatedBlueprints: [Blueprint] { inflate(deflatedBlueprints) }
+    
     // MARK: - Moving Items
     
     func moveItem(atIndexes indexes: IndexSet, toIndex: Int, inBlueprintWithID id: UUID) {
@@ -172,9 +227,9 @@ class Database: ObservableObject {
                 manifests = try decoder.decode([Manifest].self, from: manifestsData)
                 
                 
+                NotificationHandler.shared.clearNotifications()
+                
                 manifests.forEach {
-                    NotificationHandler.shared.removeNotifications([$0.id.uuidString])
-                    
                     if $0.completed == false {
                         TaskNotificationsManager.scheduleNotifications(forNewManifest: $0)
                     }

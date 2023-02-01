@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Blueprint: Codable, Identifiable {
+struct Blueprint: Codable, Identifiable, Equatable {
     let id: UUID
     var title: String
     var items: [BlueprintItem]
@@ -71,16 +71,12 @@ class Blueprint: Codable, Identifiable {
         Manifest(blueprintID: id, id: .init(), title: title, tasks: allTasks().map { $0.manifest() })
     }
     
-    func subBlueprintString() {
-        justBlueprints().map { "→ \($0.title)"}
+    static func ==(lhs: Blueprint, rhs: Blueprint) -> Bool {
+        lhs.id == rhs.id && lhs.items == rhs.items
     }
 }
 
-extension Blueprint: Hashable {
-    static func == (lhs: Blueprint, rhs: Blueprint) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
+extension Blueprint: Hashable {    
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
     }

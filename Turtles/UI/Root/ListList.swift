@@ -11,27 +11,36 @@ struct ListList: View {
     @State var editMode: EditMode = .inactive // #1
     @ObservedObject var database: Database
     
-    var manifests: [Manifest] {
-        database.manifests.filter { $0.completed == false }
+    init(database: Database) {
+        self.database = database
     }
     
     @State private var state: ScreenState = .normal
     
-    private var showingAddBlueprintAlert: Binding<Bool> { Binding(
-        get: { return state == .showingAddBlueprintAlert},
-        set: { state = ($0 ? .showingAddBlueprintAlert : .normal) }
-    ) }
+    @State private var deleteBlueprintID: UUID? {
+        didSet { state = .showingDeleteBlueprintAlert }
+    }
     
     var body: some View {
         List {
             Section(header: Text("Manifests")) {
-                ForEach(manifests) { manifest in
+                ForEach(database.manifests) { manifest in
                     NavigationLink {
                         ManifestList(manifestID: manifest.id, database: database)
                     } label: {
                         ManifestRow(manifest: manifest)
                     }
-
+                    .swipeActions() {
+                        Button {
+                            withAnimation {
+                                database.deleteManifest(manifest.id)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        .tint(.red)
+                    }
+                    
                 }
                 .onMove(perform: {
                     database.moveManifest(atIndexes: $0, toIndex: $1)
@@ -46,6 +55,9 @@ struct ListList: View {
                     } label: {
                         BlueprintView(blueprint: blueprint)
                     }
+//                    .onDrag { // mean drag a row container
+//                         return NSItemProvider()
+//                    }
                     .swipeActions() {
                         Button {
                             withAnimation {
@@ -55,7 +67,15 @@ struct ListList: View {
                             Label("Make Manifest", systemImage: "wand.and.stars")
                         }
                         .tint(.blue)
-
+                        
+                        Button {
+                            withAnimation {
+                                deleteBlueprintID = blueprint.id
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        .tint(.red)
                     }
                 }
                 .onMove(perform: {
@@ -63,24 +83,48 @@ struct ListList: View {
                 })
                 
                 Button {
-                    showingAddBlueprintAlert.wrappedValue = true
+                    if Debug.isDebugMode {
+                        database.addTask(.init(id: .init(), title: "HELLO"), to: database.blueprints.first!.id)
+                        
+                        if let manifest = database.manifests.first, let task = manifest.incompleteTasks.first {
+                            database.updateCompletionStatus(for: task.id, to: true, in: manifest.id)
+                        }
+                    } else {
+                        state = .showingAddBlueprintAlert
+                    }
                 } label: {
                     Text("New Blueprint...")
                 }
             }
         }
-        .edgesIgnoringSafeArea(.all)
         .navigationBarTitle("Lists")
-        .toolbar { EditButton() }
         .environment(\.editMode, $editMode) //#2
-        .alert(isPresented: showingAddBlueprintAlert, TextAlert(
+        .alert(isPresented: $state.equals(.showingAddBlueprintAlert, default: .normal), TextAlert(
             title: "Add Blueprint", message: nil, action: { text in
                 if let text = text, !text.isEmpty {
                     self.didAddBlueprint(withTitle: text)
                 }
             }
         ))
-
+        .alert(
+            Text("Delete blueprint?"),
+            isPresented: $state.equals(.showingDeleteBlueprintAlert, default: .normal),
+            presenting: deleteBlueprintID) { id in
+//                Button("Cancel") { }
+                Button("Delete", role: .destructive) {
+                    database.deleteBlueprint(id)
+                }
+            } message: {
+                if let blueprint = database.blueprint(with: $0) {
+                    Text("""
+                    Are you sure you want to delete "\(blueprint.title)"?
+                    It will be removed from any other blueprints referencing it and any manifests created from it will also be deleted.
+                    """)
+                } else {
+                    Text("ERROR!")
+                }
+            }
+//            .navigationViewStyle(.stack)
     }
     
     func didAddBlueprint(withTitle title: String) {
@@ -113,8 +157,39 @@ struct ListList_Previews: PreviewProvider {
 }
 
 extension ListList {
-    enum ScreenState {
+    enum ScreenState: Equatable {
         case normal
         case showingAddBlueprintAlert
+        case showingDeleteBlueprintAlert
+    }
+}
+
+extension Binding where Value == Bool {
+    init<T: Equatable>(_ binding: Binding<T>, off: T, on: T) {
+        self.init {
+            binding.wrappedValue == on
+        } set: {
+            if $0 == true {
+                binding.wrappedValue = on
+            } else {
+                binding.wrappedValue = off
+            }
+        }
+        
+    }
+}
+
+extension Binding where Value: Equatable {
+    func equals(_ value: Value, default defaultValue: Value) -> Binding<Bool> {
+        Binding<Bool> {
+            self.wrappedValue == value
+        } set: {
+            if $0 == true, self.wrappedValue != value {
+                self.wrappedValue = value
+            } else {
+                self.wrappedValue = defaultValue
+            }
+        }
+
     }
 }

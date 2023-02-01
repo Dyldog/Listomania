@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct TurtlesApp: App {
+    init() {
+    }
     var body: some Scene {
         WindowGroup {
             NavigationView {

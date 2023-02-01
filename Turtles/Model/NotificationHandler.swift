@@ -76,6 +76,10 @@ extension NotificationHandler {
 
         UNUserNotificationCenter.current().add(request)
     }
+    
+    func clearNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
 
     func removeNotifications(_ ids : [String]){        
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ids)

@@ -12,6 +12,7 @@ struct AddTaskToManifestView: View {
     @State var title: String = ""
     @State var addToManifest: Bool = false
     @State var completion: ((String, Bool)?) -> Void
+    @FocusState private var focusTextField: Bool
     
     var body: some View {
         ZStack {
@@ -23,6 +24,7 @@ struct AddTaskToManifestView: View {
                     Text("Add Task")
                         .font(.title)
                         .fontWeight(.bold)
+                        .focused($focusTextField)
                     
                     HStack {
                         Button {

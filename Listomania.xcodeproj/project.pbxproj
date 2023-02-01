@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115931D8294D58A800536C12 /* UIApplication+IsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115931D7294D58A800536C12 /* UIApplication+IsTest.swift */; };
+		115931E0294D599600536C12 /* ListomaniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115931DF294D599600536C12 /* ListomaniaUITests.swift */; };
+		115931E9294D5A2200536C12 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115931E8294D5A2200536C12 /* SnapshotHelper.swift */; };
 		622933B32702FF3E00BE070D /* NavigationLink+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */; };
 		629F9EED27269BCD00938981 /* AddTaskToManifestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */; };
 		629F9EEF2726A0C100938981 /* RaisedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629F9EEE2726A0C100938981 /* RaisedButtonStyle.swift */; };
@@ -43,7 +46,21 @@
 		FC2C0029272F9A2B001399EF /* String+MapEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2C0028272F9A2B001399EF /* String+MapEmpty.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		115931E3294D599600536C12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62C8F47B27002770006DD85F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62C8F48227002770006DD85F;
+			remoteInfo = Listomania;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		115931D7294D58A800536C12 /* UIApplication+IsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+IsTest.swift"; sourceTree = "<group>"; };
+		115931DD294D599600536C12 /* ListomaniaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListomaniaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		115931DF294D599600536C12 /* ListomaniaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListomaniaUITests.swift; sourceTree = "<group>"; };
+		115931E8294D5A2200536C12 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		622933B22702FF3E00BE070D /* NavigationLink+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+Identifiable.swift"; sourceTree = "<group>"; };
 		629F9EEC27269BCD00938981 /* AddTaskToManifestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskToManifestView.swift; sourceTree = "<group>"; };
 		629F9EEE2726A0C100938981 /* RaisedButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButtonStyle.swift; sourceTree = "<group>"; };
@@ -81,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		115931DA294D599600536C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62C8F48027002770006DD85F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,11 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		115931DE294D599600536C12 /* ListomaniaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				115931DF294D599600536C12 /* ListomaniaUITests.swift */,
+				115931E8294D5A2200536C12 /* SnapshotHelper.swift */,
+			);
+			path = ListomaniaUITests;
+			sourceTree = "<group>";
+		};
 		62C8F47A27002770006DD85F = {
 			isa = PBXGroup;
 			children = (
 				62E513DE2703498600FDD3F7 /* README.md */,
 				62C8F48527002771006DD85F /* Turtles */,
+				115931DE294D599600536C12 /* ListomaniaUITests */,
 				62C8F48427002770006DD85F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				62C8F48327002770006DD85F /* Listomania.app */,
+				115931DD294D599600536C12 /* ListomaniaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				FC2C0026272F9521001399EF /* Array+Unique.swift */,
+				115931D7294D58A800536C12 /* UIApplication+IsTest.swift */,
 				FC2C0028272F9A2B001399EF /* String+MapEmpty.swift */,
 			);
 			path = Extensions;
@@ -216,6 +252,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		115931DC294D599600536C12 /* ListomaniaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 115931E5294D599600536C12 /* Build configuration list for PBXNativeTarget "ListomaniaUITests" */;
+			buildPhases = (
+				115931D9294D599600536C12 /* Sources */,
+				115931DA294D599600536C12 /* Frameworks */,
+				115931DB294D599600536C12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				115931E4294D599600536C12 /* PBXTargetDependency */,
+			);
+			name = ListomaniaUITests;
+			productName = ListomaniaUITests;
+			productReference = 115931DD294D599600536C12 /* ListomaniaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		62C8F48227002770006DD85F /* Listomania */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62C8F49127002772006DD85F /* Build configuration list for PBXNativeTarget "Listomania" */;
@@ -244,9 +298,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					115931DC294D599600536C12 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 62C8F48227002770006DD85F;
+					};
 					62C8F48227002770006DD85F = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -270,11 +328,19 @@
 			projectRoot = "";
 			targets = (
 				62C8F48227002770006DD85F /* Listomania */,
+				115931DC294D599600536C12 /* ListomaniaUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		115931DB294D599600536C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62C8F48127002770006DD85F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +353,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		115931D9294D599600536C12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115931E0294D599600536C12 /* ListomaniaUITests.swift in Sources */,
+				115931E9294D5A2200536C12 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62C8F47F27002770006DD85F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +394,7 @@
 				62E513D92703387500FDD3F7 /* SearchBar.swift in Sources */,
 				62C8F48727002771006DD85F /* TurtlesApp.swift in Sources */,
 				FC2C0029272F9A2B001399EF /* String+MapEmpty.swift in Sources */,
+				115931D8294D58A800536C12 /* UIApplication+IsTest.swift in Sources */,
 				62C8F49C27003223006DD85F /* ListList.swift in Sources */,
 				629F9EF72726BA4800938981 /* CheckView.swift in Sources */,
 			);
@@ -326,7 +402,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		115931E4294D599600536C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62C8F48227002770006DD85F /* Listomania */;
+			targetProxy = 115931E3294D599600536C12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		115931E6294D599600536C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ListomaniaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Listomania;
+			};
+			name = Debug;
+		};
+		115931E7294D599600536C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ListomaniaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Listomania;
+			};
+			name = Release;
+		};
 		62C8F48F27002772006DD85F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,9 +587,12 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.Turtles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -497,15 +620,27 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.Turtles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		115931E5294D599600536C12 /* Build configuration list for PBXNativeTarget "ListomaniaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115931E6294D599600536C12 /* Debug */,
+				115931E7294D599600536C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		62C8F47E27002770006DD85F /* Build configuration list for PBXProject "Listomania" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

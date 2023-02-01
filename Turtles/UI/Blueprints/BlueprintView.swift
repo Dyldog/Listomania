@@ -17,10 +17,8 @@ struct BlueprintView: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
             
-            if let subString = blueprint.childSubBlueprintString().mapEmptyToNil() {
-                Text(subString)
-                    .font(.caption2)
-            }
+            Text(blueprint.childSubBlueprintString())
+                .font(.caption2)
         }
             
     }
